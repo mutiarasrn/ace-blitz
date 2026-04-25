@@ -3,7 +3,7 @@ import { monadTestnet } from './monad';
 
 export const config = getDefaultConfig({
   appName: 'ACE-Blitz',
-  projectId: 'a5c0b1712aebdb817fa1d615bd052608', // Placeholder WalletConnect ID
+  projectId: '6d3e960e153683b5bba12c57cbdddf75',
   chains: [monadTestnet],
   ssr: true,
 });

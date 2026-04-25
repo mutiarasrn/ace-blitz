@@ -5,12 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Bell, Wallet } from "lucide-react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const navLinks = [
   { name: "MARKETPLACE", path: "/marketplace" },
   { name: "DASHBOARD", path: "/dashboard" },
-  { name: "GOVERNANCE", path: "#" },
-  { name: "NODES", path: "/seller" },
+  { name: "SELLER", path: "/seller" },
 ];
 
 export const TopNav = () => {
@@ -50,9 +50,7 @@ export const TopNav = () => {
         <button className="text-slate-400 hover:text-white transition-colors">
           <Wallet size={18} />
         </button>
-        <button className="bg-neon-lime text-obsidian font-space font-bold text-xs tracking-wider px-6 py-2 uppercase hover:bg-[#b5f848] transition-colors shadow-[0_0_15px_rgba(163,230,53,0.2)]">
-          Connect Wallet
-        </button>
+        <ConnectButton />
       </div>
     </nav>
   );

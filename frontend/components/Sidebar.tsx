@@ -3,13 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Store, Zap, Activity, FileText, Settings, HelpCircle, FileBox } from "lucide-react";
+import { Store, Zap, Activity, Settings, HelpCircle, FileBox } from "lucide-react";
 
 const sidebarLinks = [
   { name: "Marketplace", path: "/marketplace", icon: Store },
   { name: "Seller Hub", path: "/seller", icon: Zap },
   { name: "My Trades", path: "/dashboard", icon: Activity },
-  { name: "Receipts", path: "/dashboard", icon: FileText },
   { name: "Settings", path: "#", icon: Settings },
 ];
 

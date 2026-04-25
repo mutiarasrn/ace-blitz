@@ -13,14 +13,9 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10 flex flex-col items-center text-center">
         
-        {/* Monad Live Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-space font-medium tracking-widest uppercase mb-10 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
-          Monad Mainnet Live
-        </div>
-
         {/* Hero Copy */}
         <h1 className="font-space font-medium text-lg md:text-xl text-slate-300 mb-4 tracking-wide">
-          Jual Beli Listrik Langsung, <span className="text-neon-lime font-bold">Tanpa PLN</span>
+          Buy & Sell Energy Directly, <span className="text-neon-lime font-bold">Without the Middleman</span>
         </h1>
         <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto mb-10 font-inter font-light">
           P2P energy trading on Monad - Fast, Fair, and Transparent. Empowering local communities to trade surplus solar and wind energy without intermediaries.
