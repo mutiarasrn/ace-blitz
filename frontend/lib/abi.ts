@@ -68,6 +68,16 @@ export const ENERGY_MARKET_ABI = [
     stateMutability: "view",
   },
   {
+    type: "function", name: "listings",
+    inputs: [{ name: "seller", type: "address" }],
+    outputs: [
+      { name: "pricePerKwh", type: "uint256" },
+      { name: "availableKwh", type: "uint256" },
+      { name: "active", type: "bool" },
+    ],
+    stateMutability: "view",
+  },
+  {
     type: "event", name: "TradeCreated",
     inputs: [
       { name: "tradeId", type: "uint256", indexed: true },
