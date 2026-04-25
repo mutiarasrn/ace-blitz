@@ -53,9 +53,9 @@ export const Sidebar = () => {
             <div className="px-4 mb-6">
               <label className="text-xs font-inter text-slate-400 mb-2 block">Price Range (MON/kWh)</label>
               <div className="flex items-center gap-2">
-                <input type="text" placeholder="Min" className="w-full bg-obsidian-card border border-white/10 rounded p-2 text-xs text-white focus:outline-none focus:border-neon-lime/50" />
+                <input type="text" placeholder="Min" suppressHydrationWarning className="w-full bg-obsidian-card border border-white/10 rounded p-2 text-xs text-white focus:outline-none focus:border-neon-lime/50" />
                 <span className="text-slate-500">-</span>
-                <input type="text" placeholder="Max" className="w-full bg-obsidian-card border border-white/10 rounded p-2 text-xs text-white focus:outline-none focus:border-neon-lime/50" />
+                <input type="text" placeholder="Max" suppressHydrationWarning className="w-full bg-obsidian-card border border-white/10 rounded p-2 text-xs text-white focus:outline-none focus:border-neon-lime/50" />
               </div>
             </div>
 
@@ -77,7 +77,7 @@ export const Sidebar = () => {
       </nav>
 
       <div className="p-6 border-t border-white/5">
-        <button className="w-full py-3 bg-monad-purple/10 border border-monad-purple/30 text-monad-purple hover:bg-monad-purple hover:text-white transition-all font-space text-sm tracking-wide font-medium rounded-lg mb-6 shadow-[0_0_15px_rgba(139,92,246,0.1)] hover:shadow-[0_0_20px_rgba(139,92,246,0.4)]">
+        <button suppressHydrationWarning className="w-full py-3 bg-monad-purple/10 border border-monad-purple/30 text-monad-purple hover:bg-monad-purple hover:text-white transition-all font-space text-sm tracking-wide font-medium rounded-lg mb-6 shadow-[0_0_15px_rgba(139,92,246,0.1)] hover:shadow-[0_0_20px_rgba(139,92,246,0.4)]">
           Mint Energy NFT
         </button>
 

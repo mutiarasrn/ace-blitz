@@ -33,6 +33,11 @@ export default function Home() {
               View Marketplace
             </button>
           </Link>
+          <Link href="/why">
+            <button className="bg-transparent text-neon-lime font-space font-medium text-sm tracking-wider px-8 py-3.5 border border-neon-lime/30 hover:border-neon-lime/60 hover:bg-neon-lime/5 transition-colors">
+              Why We Exist →
+            </button>
+          </Link>
         </div>
 
         {/* Hero Graphic Placeholder (Image from mockup) */}

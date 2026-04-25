@@ -95,7 +95,7 @@ contract EnergyMarket is ReentrancyGuard, Ownable {
 
     // ─── Buyer functions ──────────────────────────────────────────────
 
-    /// @notice Buyer membeli energi — MON masuk escrow ke contract ini
+    /// @notice Buyer membeli energi — MON langsung ke seller, NFT langsung ke buyer
     /// @param seller Address seller yang dipilih
     /// @param kwh Jumlah kWh yang ingin dibeli (dalam unit 1e18 = 1 kWh)
     function buyEnergy(address seller, uint256 kwh) external payable nonReentrant {
@@ -118,11 +118,26 @@ contract EnergyMarket is ReentrancyGuard, Ownable {
             buyer: msg.sender,
             kwh: kwh,
             amount: msg.value,
-            status: TradeStatus.Pending,
+            status: TradeStatus.Completed,
             timestamp: block.timestamp
         });
 
+        // MON langsung ke seller
+        (bool ok, ) = seller.call{value: msg.value}("");
+        require(ok, "EnergyMarket: MON transfer failed");
+
+        // NFT langsung ke buyer
+        uint256 nftId = receipt.mintReceipt(
+            msg.sender,
+            seller,
+            kwh,
+            msg.value,
+            tradeId,
+            block.timestamp
+        );
+
         emit TradeCreated(tradeId, seller, msg.sender, kwh, msg.value);
+        emit TradeCompleted(tradeId, seller, msg.sender, nftId);
     }
 
     // ─── Settlement functions ─────────────────────────────────────────
