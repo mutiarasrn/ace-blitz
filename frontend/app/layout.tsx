@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import { TopNav } from "@/components/TopNav";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const space = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
 });
 
@@ -12,10 +13,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-import { Navigation } from "@/components/Navigation";
-
 export const metadata: Metadata = {
-  title: "ACE-Blitz - P2P Energy Trading",
+  title: "ACE-Blitz - Kinetic Energy on Monad",
   description: "Direct Energy Trading, Bypassing the Grid on Monad.",
 };
 
@@ -25,10 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable} dark antialiased`}>
-      <body className={`font-inter min-h-screen flex flex-col`}>
-        <Navigation />
-        <main className="flex-1 pt-20">
+    <html lang="en" className={`${space.variable} ${inter.variable} dark antialiased`}>
+      <body className={`font-space min-h-screen bg-obsidian text-slate-100 flex flex-col`}>
+        <TopNav />
+        <main className="flex-1 flex flex-col">
           {children}
         </main>
       </body>
