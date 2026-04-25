@@ -86,7 +86,7 @@ app.post('/simulate-meter', async (req, res) => {
 // Fetch semua active listings dari contract
 app.get('/listings', async (req, res) => {
   try {
-    const raw = await (contract as any).getListings();
+    const raw = await (contract as any).getActiveListings();
 
     // Format bigint → readable
     const listings = raw
@@ -118,15 +118,14 @@ app.get('/trades/:address', async (req, res) => {
 
   try {
     // Ambil total trade counter dulu
-    const tradeCounter = await (contract as any).tradeCounter();
-    const total = Number(tradeCounter);
+    const total = await (contract as any).totalTrades();
+    const count = Number(total);
 
-    if (total === 0)
+    if (count === 0)
       return res.json({ trades: [], total: 0 });
 
-    // Fetch semua trades dan filter yang melibatkan address ini
-    const tradePromises = Array.from({ length: total }, (_, i) =>
-      (contract as any).trades(i + 1).then((t: any) => ({ id: i + 1, ...t }))
+    const tradePromises = Array.from({ length: count }, (_, i) =>
+      (contract as any).getTrade(i).then((t: any) => ({ id: i, ...t }))
     );
 
     const allTrades = await Promise.all(tradePromises);
@@ -150,7 +149,7 @@ app.get('/trades/:address', async (req, res) => {
         amount: ethers.formatEther(t.amount),
         amountWei: t.amount.toString(),
         status: STATUS_MAP[Number(t.status)] ?? 'unknown',
-        createdAt: new Date(Number(t.createdAt) * 1000).toISOString(),
+        createdAt: new Date(Number(t.timestamp) * 1000).toISOString(),
         role: t.seller.toLowerCase() === address.toLowerCase() ? 'seller' : 'buyer',
       }));
 
@@ -166,8 +165,8 @@ app.get('/trades/:address', async (req, res) => {
 // Global stats buat landing page
 app.get('/stats', async (req, res) => {
   try {
-    const tradeCounter = await (contract as any).tradeCounter();
-    const listings = await (contract as any).getListings();
+    const tradeCounter = await (contract as any).totalTrades();
+    const listings = await (contract as any).getActiveListings();
     const activeListings = listings.filter((l: any) => l.active).length;
 
     res.json({
