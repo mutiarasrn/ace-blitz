@@ -1,0 +1,17 @@
+# Foundry
+smartcontract/out/
+smartcontract/cache/
+smartcontract/broadcast/
+smartcontract/lib/
+
+# Environment
+.env
+*.env.local
+
+# Node
+node_modules/
+.next/
+
+# OS
+.DS_Store
+Thumbs.db
