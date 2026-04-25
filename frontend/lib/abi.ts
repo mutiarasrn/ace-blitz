@@ -1,4 +1,4 @@
-export const ENERGY_MARKET_ADDRESS = "0x16e0CD4f2db4cFaD8a77375E7F14F02658A5f9AF" as const;
+export const ENERGY_MARKET_ADDRESS = "0x7af0f45E445724dEfC8943F73461988eDeE86E1D" as const;
 export const BACKEND_URL = "http://localhost:3001";
 
 export const ENERGY_MARKET_ABI = [
