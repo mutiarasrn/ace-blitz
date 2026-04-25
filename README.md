@@ -1,12 +1,15 @@
-# ACE-Blitz — Anti Corruption Electricity
+# ACE-Blitz — Anti Corruption Energy
 
 > Hackathon: Monad Blitz Jogja | Theme: Social / DeFi
 
 ---
 
+link deployment: https://ace-blitz.vercel.app/
+EnegryMarket=0x16e0CD4f2db4cFaD8a77375E7F14F02658A5f9AF
+EnergyReceipt=0xF33763f6cd187F59D41B202960bA3BB8C4C494aa
 ## What is ACE-Blitz?
 
-ACE-Blitz (Anti Corruption Electricity) is a peer-to-peer energy trading platform built on Monad. It enables households with solar panels to sell their surplus electricity directly to neighbors via smart contracts — no middleman, no monopoly, no hidden fees.
+ACE-Blitz (Anti Corruption Energy) is a peer-to-peer energy trading platform built on Monad. It enables households with solar panels to sell their surplus electricity directly to neighbors via smart contracts — no middleman, no monopoly, no hidden fees.
 
 **One-liner:**
 > "PLN monopolizes electricity prices with zero transparency — ACE-Blitz gives communities the power to trade energy directly, on-chain, fairly."
